@@ -1,0 +1,39 @@
+replicaCount: 1
+
+image:
+  repository: ""
+  tag: ""
+  pullPolicy: IfNotPresent
+
+podSecurityContext:
+  fsGroup: 888
+  fsGroupChangePolicy: Always
+
+
+securityContext:
+  runAsUser: 888
+  runAsGroup: 888
+  privileged: false
+
+resources:
+  limits:
+    cpu: "0.8"
+    memory: "500Mi"
+  requests:
+    cpu: "0.3"
+    memory: "200Mi"
+
+service:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      targetPort: 9898
+      protocol: TCP
+
+ingress:
+  path: "/"
+
+
+livenessProbe: {}
+readinessProbe: {}
