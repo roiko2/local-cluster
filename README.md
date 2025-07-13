@@ -35,7 +35,7 @@ helm upgrade --install podinfo ./charts/podinfo-webapp \
 
 
 - ```http://lcoalhost/official``` → Official Podinfo
-- ```http://lcoalhost/custom``` → Custom Podinfo`
+- ```http://lcoalhost/custom``` → Custom Podinfo
 
 ### Build a new version for custom podinfo app
 ```bash
