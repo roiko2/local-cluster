@@ -33,9 +33,9 @@ helm upgrade --install podinfo ./charts/podinfo-webapp \
 
 ### Access the Applications
 
-Once deployed, both applications are accessible from your browser or via curl:  
-**Official Podinfo**: ```http://localhost/official```  
-**Custom Podinfo**: ```http://localhost/custom```
+
+- ```http://lcoalhost/official``` → Official Podinfo
+- ```http://lcoalhost/custom``` → Custom Podinfo`
 
 ### Build a new version for custom podinfo app
 ```bash
@@ -51,9 +51,3 @@ To destroy the local cluster and clean up resources:
 cd terraform/local-cluster
 terraform destroy --auto-approve
 ```
-
-### Notes
-Ingress paths:
-
-- ```/official``` → Official Podinfo
-- ```/custom``` → Custom Podinfo
