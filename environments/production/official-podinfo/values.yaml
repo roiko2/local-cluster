@@ -8,3 +8,23 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
   path: "/official(/|$)(.*)"
   pathType: ImplementationSpecific
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 9898
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  timeoutSeconds: 20
+  successThreshold: 1
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /readyz
+    port: 9898
+  initialDelaySeconds: 20
+  periodSeconds: 60
+  timeoutSeconds: 10
+  successThreshold: 1
+  failureThreshold: 3
