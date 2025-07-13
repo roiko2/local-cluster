@@ -26,7 +26,7 @@ helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
 helm upgrade --install podinfo ./charts/podinfo-webapp \
   -f environments/production/official-podinfo/values.yaml \
   --namespace official-podinfo --create-namespace
-helm upgrade --install podinfo ./charts/podinfo-webapp \   
+helm upgrade --install podinfo ./charts/podinfo-webapp \
   -f environments/production/custom-podinfo/values.yaml \
   --namespace custom-podinfo --create-namespace
 ```
